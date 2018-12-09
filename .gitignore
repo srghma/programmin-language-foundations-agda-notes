@@ -1,3 +1,4 @@
 *.agda.vim
 *.agdai
 __Agda__
+result

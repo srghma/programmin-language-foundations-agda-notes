@@ -1,11 +1,4 @@
-{ pkgs ? import (import ./nix/nixpkgs) {} }:
-
-with pkgs;
-
 let
-  pkg = agda.mkDerivation(self: {
-    name = "MyPackage";
-    buildDepends = [ pkgs.AgdaStdlib ];
-  });
+  pkg = import ./default.nix {};
 in
   pkg.env
