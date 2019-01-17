@@ -19,9 +19,7 @@ sym-≐ : ∀ {A : Set} {x y : A}
   → y ≐ x
 sym-≐ {A} {x} {y} x≐y P py = Qy py
   where
-    Q : A → Set
-    Q z = P z → P x
     Qx : P x → P x
     Qx = refl-≐ P
     Qy : P y → P x
-    Qy = x≐y Q Qx
+    Qy = x≐y (\z → P z → P x) Qx

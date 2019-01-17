@@ -2,3 +2,4 @@
 *.agdai
 __Agda__
 result
+.gcroots
