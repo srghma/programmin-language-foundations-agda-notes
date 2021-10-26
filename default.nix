@@ -3,12 +3,11 @@
 with pkgs;
 
 let
-  pkg = agda.mkDerivation(self: {
+  myagda = agda.withPackages [ agdaPackages.standard-library ];
+
+  pkg = mkShell {
     name = "MyPackage";
-    src = ./.;
-    everythingFile = "Main.agda";
-    sourceDirectories = [ "." ];
-    buildDepends = [ pkgs.AgdaStdlib ];
-  });
+    buildInputs = [ myagda ];
+  };
 in
   pkg
